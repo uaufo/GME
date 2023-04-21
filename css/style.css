@@ -4,14 +4,14 @@
       left: 840px;
       width: 100px;
       height: 61px;
-      background-image: url('/home/root/css/png/UFO.png');
+      background-image: url('css/png/UFO.png');
       background-size: cover;
       background-repeat: no-repeat;
 
       
     }
     body {
-      background-image: url('/home/root/css/png/playfon.png');
+      background-image: url('css/png/playfon.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;

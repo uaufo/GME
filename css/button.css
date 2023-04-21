@@ -1,6 +1,6 @@
 body {
       font-size: 60%;
-      background-image: src="../css/Weed1.png";
+      background-image: url("Weed1.png");
       background-repeat: no-repeat;
       height: 100%;
       background-size: cover;

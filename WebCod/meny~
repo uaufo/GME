@@ -1,0 +1,16 @@
+<html>
+<head>
+<title> home </title>
+<link rel="stylesheet" href="css/button.css" >
+</head>
+<body>
+<div style="text-align:center; background-color: #EDEDED;" > <img src="PNG/UA.png" width="70" height="70" alt="">  </div>
+    <div class="container" translate="no" >
+      <button onclick="window.location.href = '/home/ua/WebCod/Play/SnakePlay';" type="button" class="button3"> Play </button>
+      <button onclick="window.location.href = 'https://twitter.com/_ua_ua_ua';" type="button" class="button3"> Twitter </button>
+      <button onclick="window.location.htef = 'https://steamcommunity.com/profiles/76561199093200180/';" type="button" class="button3"> Steam </button>
+      <button type="button" class="button3"> Discord </button>
+    </div>
+   	<div style="text-align: center; color: #FFF;"  > <img src="PNG/Ukrein.png" width="80" height="60">  <h1> Slava Ukrain </h1> </div> 	
+</body>
+</html>

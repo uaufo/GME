@@ -1,6 +1,6 @@
 body {
       font-size: 60%;
-      background-image: url(/home/root/css/png/weed1.png);
+      background-image: url(css/png/weed1.png);
       background-repeat: no-repeat;
       height: 100%;
       background-size: cover;
@@ -9,7 +9,7 @@ body {
       @media only screen and (max-width: 1000px) {
             body {
                   font-size: 160%;
-                  background-image: url(/home/root/css/png/sam21.png);
+                  background-image: url(css/png/sam21.png);
                   background-size: cover;
                   height: 100%;
                   background-repeat: no-repeat;

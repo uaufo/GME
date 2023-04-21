@@ -9,7 +9,7 @@ body {
       @media only screen and (max-width: 1000px) {
             body {
                   font-size: 160%;
-                  background-image: url(css/Sam21.png);
+                  background-image: src="css/Sam21.png";
                   background-size: cover;
                   height: 100%;
                   background-repeat: no-repeat;

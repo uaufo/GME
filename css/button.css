@@ -1,6 +1,6 @@
 body {
       font-size: 60%;
-      background-image: url(https://github.com/uaufo/ua-ufo/blob/main/css/Weed1.png);
+      background-image: src="css/Weed1.png";
       background-repeat: no-repeat;
       height: 100%;
       background-size: cover;

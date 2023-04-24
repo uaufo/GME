@@ -1,0 +1,52 @@
+   #box {
+      position: absolute;
+      top: 455px;
+      left: 255px;
+      width: 100px;
+      height: 61px;
+      background-image: url('png/UFO.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      
+    }
+    body {
+      background-image: url('png/Playfon.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+
+    }
+    .bullet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px pink;
+}
+.enemy {
+  position: absolute;
+  background-image: url(png/flu1.png);
+  width: 100px;
+  height: 50px;
+  
+}
+
+.explosion {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url('explosion.png');
+  background-size: cover;
+  animation: explode 1s;
+}
+
+@keyframes explode {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

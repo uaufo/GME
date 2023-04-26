@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFO</title>
+  <link rel="stylesheet" href="css/style.css" >
+</head>
+<header>
+</header>
+<body>
+  <div class="bullet"></div>
+  <script type="text/javascript">
+    // HTML код добавляемого элемента пули
+// <div class="bullet"></div>
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 32) { // клавиша W
+    var bullet = document.createElement('div');
+    bullet.className = 'bullet';
+    bullet.style.backgroundColor = 'pink';
+    document.body.appendChild(bullet);
+    
+    var x = parseInt(box.style.left) + box.offsetWidth / 2;
+    var y = parseInt(box.style.top) + box.offsetHeight / 2;
+    var speed = 20;
+    
+    var intervalId = setInterval(function() {
+      x += speed;
+      bullet.style.left = x + 'px';
+      bullet.style.top = y + 'px';
+      
+      // проверка на столкновение с объектами
+      // ...
+      
+      // удаление элемента, если он выходит за границы экрана
+      if (x > window.innerWidth || y > window.innerHeight) {
+        clearInterval(intervalId);
+        bullet.parentNode.removeChild(bullet);
+      }
+    }, 20);
+  }
+});    
+  
+  </script>
+  <div id="box"></div>
+  <script type="text/javascript">
+      var box = document.getElementById('box');
+var x = 255;
+var y = 455;
+var speed = 10;
+var moveLeft = false;
+var moveUp = false;
+var moveRight = false;
+var moveDown = false;
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 37) { // влево
+    moveLeft = true;
+  } else if (event.keyCode == 38) { // вверх
+    moveUp = true;
+  } else if (event.keyCode == 39) { // вправо
+    moveRight = true;
+  } else if (event.keyCode == 40) { // вниз
+    moveDown = true;
+  }
+});
+
+document.addEventListener('keyup', function(event) {
+  if (event.keyCode == 37) { // влево
+    moveLeft = false;
+  } else if (event.keyCode == 38) { // вверх
+    moveUp = false;
+  } else if (event.keyCode == 39) { // вправо
+    moveRight = false;
+  } else if (event.keyCode == 40) { // вниз
+    moveDown = false;
+  }
+});
+
+setInterval(function() {
+  if (moveLeft) {
+    x -= speed;
+    if (x < 0) {
+      x = 0;
+    }
+  } else if (moveUp) {
+    y -= speed;
+    if (y < 0) {
+      y = 0;
+    }
+  } else if (moveRight) {
+    x += speed;
+    if (x > window.innerWidth - box.offsetWidth) {
+      x = window.innerWidth - box.offsetWidth;
+    }
+  } else if (moveDown) {
+    y += speed;
+    if (y > window.innerHeight - box.offsetHeight) {
+      y = window.innerHeight - box.offsetHeight;
+    }
+  }
+  box.style.left = x + 'px';
+  box.style.top = y + 'px';
+}, 20);
+  
+  </script>
+  <div id="eneny-container"></div>
+  <script> 
+    var enenyInterval = setInterval(function() {
+  // Создаем элемент врага и задаем его начальные координаты
+  var eneny = document.createElement('div');
+  eneny.className = 'eneny';
+  eneny.style.left = window.innerWidth + 'px';
+  eneny.style.top = Math.floor(Math.random() * (window.innerHeight - 200)) + 'px'; // Рандомное значение от 0 до высоты окна минус высота врага
+
+  // Добавляем элемент врага на страницу
+  document.body.appendChild(eneny);
+
+  // Задаем скорость и интервал перемещения врага
+  var speed = Math.floor(Math.random() * 5) + 10; // Рандомная скорость от 5 до 10
+  var enenyMoveInterval = setInterval(function() {
+    // Двигаем элемент врага влево
+    var x = parseInt(eneny.style.left);
+    x -= speed;
+    eneny.style.left = x + 'px';
+
+    // Проверяем столкновение с пулей
+    var killedEnemies = 0;
+    var bullets = document.querySelectorAll('.bullet');
+    bullets.forEach(function(bullet) {
+      var bx = parseInt(bullet.style.left);
+      var by = parseInt(bullet.style.top);
+      if (bx > x && bx < x + 50 && by > parseInt(eneny.style.top) && by < parseInt(eneny.style.top) + 50) {
+        // Удаляем пулю и врага и вызываем функцию взрыва
+        bullet.parentNode.removeChild(bullet);
+        clearInterval(enenyMoveInterval);
+        eneny.parentNode.removeChild(eneny);
+        explode(x, parseInt(eneny.style.top));
+      }
+    });
+
+    // Если враг выходит за границы экрана, удаляем его
+    if (x < -50) {
+      clearInterval(enemyMoveInterval);
+      eneny.parentNode.removeChild(eneny);
+    }
+  }, 20);
+}, 20000); // Интервал появления нового врага (2000 миллисекунд = 2 секунды)
+
+  </script>
+ 
+  <div id="enemy-container"></div>
+  <script> 
+    var enemyInterval = setInterval(function() {
+  // Создаем элемент врага и задаем его начальные координаты
+  var enemy = document.createElement('div');
+  enemy.className = 'enemy';
+  enemy.style.left = window.innerWidth + 'px';
+  enemy.style.top = Math.floor(Math.random() * (window.innerHeight - 50)) + 'px'; // Рандомное значение от 0 до высоты окна минус высота врага
+
+  // Добавляем элемент врага на страницу
+  document.body.appendChild(enemy);
+
+  // Задаем скорость и интервал перемещения врага
+  var speed = Math.floor(Math.random() * 5) + 5; // Рандомная скорость от 5 до 10
+  var enemyMoveInterval = setInterval(function() {
+    // Двигаем элемент врага влево
+    var x = parseInt(enemy.style.left);
+    x -= speed;
+    enemy.style.left = x + 'px';
+
+    // Проверяем столкновение с пулей
+    var killedEnemies = 0;
+    var bullets = document.querySelectorAll('.bullet');
+    bullets.forEach(function(bullet) {
+      var bx = parseInt(bullet.style.left);
+      var by = parseInt(bullet.style.top);
+      if (bx > x && bx < x + 50 && by > parseInt(enemy.style.top) && by < parseInt(enemy.style.top) + 50) {
+        // Удаляем пулю и врага и вызываем функцию взрыва
+        bullet.parentNode.removeChild(bullet);
+        clearInterval(enemyMoveInterval);
+        enemy.parentNode.removeChild(enemy);
+        explode(x, parseInt(enemy.style.top));
+      }
+    });
+
+    // Если враг выходит за границы экрана, удаляем его
+    if (x < -50) {
+      clearInterval(enemyMoveInterval);
+      enemy.parentNode.removeChild(enemy);
+    }
+  }, 20);
+}, 2000); // Интервал появления нового врага (2000 миллисекунд = 2 секунды)
+
+  </script>
+</body>
+</html>

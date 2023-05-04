@@ -1,0 +1,161 @@
+body {
+      overflow-x: hidden;
+      overflow-y: hidden;
+      font-size: 60%;
+      background-image: url('png/Weed1.png');
+      background-repeat: no-repeat;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      }
+      @media only screen and (max-width: 1000px) {
+            body {
+                  user-zoom: fixed;
+                  overflow-x: hidden;
+                  overflow-y: hidden;
+                  font-size: 160%;
+                  background-image: url('png/Sam21.png');
+                  background-size: cover;
+                  height: 100%;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  
+
+                  
+            }
+        
+      }
+      @media only screen and (max-width: 767px) {
+            body {
+                  user-zoom: fixed;
+                  overflow-x: hidden;
+                  overflow-y: hidden;
+                  font-size: 55%;
+            }
+      }
+       
+      header {
+            background-color: #2b5a3e;
+            text-align: center;
+            height: 80px;
+       }   
+      .my-image {
+            height: 80px;
+      }
+      @media only screen and (max-width: 1000px) {
+            header {
+                  background-color: #2b5a3e;
+                  text-align: center;
+                  height: 150px;
+            }
+            .my-image  {
+                  height: 150px;
+      
+            }
+      }     
+      @media only screen and (max-width: 767px) {
+            header {
+                  height: 70px;
+            }
+            .my-image {
+                  height: 70px;
+            }
+      }
+      .Ukreine {
+            height: 60px;
+            width: 80px;
+           
+
+
+      }
+      .text {
+            text-align: center;
+            color: #FFF;
+      }
+      @media only screen and (max-width: 1000px) {
+            .Ukreine {
+                  height: 140px;
+                  width: 170px;
+            }
+      }
+      @media only screen and (max-width: 767px) {
+            .Ukreine {
+                  height: 40px;
+                  width: 50px;
+            }
+      }
+
+      .container {
+      padding: 30px;
+      }
+      @media only screen and (max-width: 767px) {
+            .container {
+                  padding: 0px;
+            }
+      }
+      button,
+      button::after {
+      -webkit-transition: all 0.40s;
+      -moz-transition: all 0.40s;
+      -o-transition: all 0.40s;
+      transition: all 0.40s;
+      }
+      button {
+      background: none;
+      border: 4px solid #fff;
+      border-radius: 10px;
+      color: #DCDCDC;
+      display: block;
+      font-size: 1.6em;
+      font-weight: bold;
+      margin: 20px auto;
+      padding: 2em 6em;
+      position: relative;
+      text-transform: uppercase;
+      width: 18%;
+      }
+      @media only screen and (max-width: 1000px) {
+            button {
+                  width: 80%;
+            }
+      }
+      button::before,
+      button::after {
+      background: #FFF;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      button:hover {
+      color: #000000;
+      }
+      .button1::after {
+      height: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      }
+      .button1:hover:after {
+      height: 100%;
+      }
+      .button2::after {
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      .button2:hover:after {
+      width: 100%;
+      }
+      .button3::after {
+      height: 0;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      }
+      .button3:hover:after {
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+      }
